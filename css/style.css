@@ -1,0 +1,86 @@
+#vig-hole {
+    padding: 10px;
+    /*overflow: hidden;*/
+    height: 265px;
+    width: auto;
+}
+
+h1 h2 h3{
+
+    text-align: center;
+}
+
+div.right-side-text {
+    border-left: 1px solid black;
+}
+
+body{
+    color:#E0E0E0!important;
+    background-color:#181c1c!important;
+}
+
+.rankimg img{
+    width: 42px;
+    height: 42px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
+}
+#buttle{
+    cursor:pointer;
+    color:#E0E0E0!important
+    background-color:#181c1c!important;
+}
+
+#aircraft{
+    visibility: none;
+}
+
+#arrup{
+    display: none;
+}
+
+#no-bullet li:nth-child(1){
+    list-style-type: none;
+}
+
+.nav-tabs li a{
+    width:100%;
+    margin-right:0px !important;
+}
+
+.nav-tabs li.active a,
+.nav-tabs li.active a:hover,
+.nav-tabs li.active a:focus{
+    color: #555555;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-bottom-color: transparent;
+}
+
+/*#active{*/
+    /*border-style:outset;*/
+    /*border-width: 15px;*/
+    /**/
+/*}*/
+
+.nav-tabs li{
+    margin : auto;
+}
+
+
+.nav-tabs li a img{
+    margin : auto;
+}
+
+#vig {
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}

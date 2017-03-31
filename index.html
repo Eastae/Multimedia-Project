@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Case</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="js/yt.js"></script>
+</head>
+<body>
+<script>
+
+    jQuery(document).ready(function($) {
+
+    $('#myCarousel').carousel({
+        interval: 5000
+    });
+
+    $('#carousel-text').html($('#slide-content-0').html());
+
+    //Handles the carousel thumbnails
+    $('[id^=carousel-selector-]').click( function(){
+        var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+        var id = parseInt(id);
+        $('#myCarousel').carousel(id);
+    });
+
+
+    // When the carousel slides, auto update the text
+    $('#myCarousel').on('slid.bs.carousel', function (e) {
+        var id = $('.item.active').data('slide-number');
+        $('#carousel-text').html($('#slide-content-'+id).html());
+    });
+});
+</script>
+
+<div class="container">
+    <div id="main_area">
+        <!-- Slider -->
+        <div class="row">
+            <div class="col-xs-12" id="slider">
+                <!-- Top part of the slider -->
+                <div class="row">
+                    <div class="col-sm-3" id="carousel-bounding-box">
+                        <div class="carousel slide" id="myCarousel">
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item" data-slide-number="0">
+                                    <img src="images/murphie.jpg"></div>
+
+                                <div class="item" data-slide-number="1">
+                                    <img src="images/witches.jpg"></div>
+
+                                <div class="item" data-slide-number="2">
+                                    <img src="images/karel.jpg"></div>
+
+                                <div class="item" data-slide-number="3">
+                                    <img src="images/brown.jpg"></div>
+
+                                <div class="item" data-slide-number="4">
+                                    <img src="images/snek.png"></div>
+
+                                <div class="item" data-slide-number="5">
+                                    <img src="images/witold.jpg"></div>
+                            </div><!-- Carousel nav -->
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            </a>
+                            <a class="carousel-control left" data-slide="prev" href="#myCarousel">‹</a> <a class="carousel-control right" data-slide="next" href="#myCarousel">›</a>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-9" id="carousel-text"></div>
+
+                    <div id="slide-content" style="display: none;">
+                        <div id="slide-content-0">
+                            <h2>To Hell And Back</h2>
+                            <h3>Audie Leon Murphy</h3>
+                            <p class="sub-text">20 June 1925 - 28 May 1971</p>
+                            <p>The most decorated American soldier of the 20th century US Army,
+                                Murphy brought more than just honor home. He struggled to forget the faces of the
+                                slain in a world that would not even name his struggle as PTSD for many years to come.
+                                <a href="#">Read more</a></p>
+                        </div>
+
+                        <div id="slide-content-1">
+                            <h2>Night Witches</h2>
+                            <h3>588th Night Bomber Regiment</h3>
+                            <p class="sub-text">Active: 1942 - 1945</p>
+                            <p class="sub-text"> In 1942 Soviet Premier Josef Stalin issued an order that three women's air force units were to be founded.
+                                The 588th were given obsolete biplanes and a grueling operational tempo, and
+                                would go on to become one of the most decorated aviation units in the Soviet Air Force
+                                <a href="#">Read more</a></p>
+                        </div>
+
+                        <div id="slide-content-2">
+                            <h2>Far from the Fame</h2>
+                            <h3>Karel Janoušek</h3>
+                            <p class="sub-text">30 October 1893 - 27 October 1971</p>
+                            <p class="sub-text">A Czech soldier who cut his teeth fighting with the Czech Legions in
+                                Russia in the early 1900's, he worked his way up to become Air Marshall of the
+                                Czech Air Force Units in the Royal Air Force before being imprisioned after the war <a href="#">Read more</a></p>
+                        </div>
+
+                        <div id="slide-content-3">
+                            <h2>No Bullets Fly</h2>
+                            <h3>The Charlie Brown and Franz Stigler Incident</h3>
+                            <p class="sub-text">20 December 1943</p>
+                            <p class="sub-text"> Ye Olde Pub, the B-17 Flying Fortress under command of <a href="#">Read more</a></p>
+                        </div>
+
+                        <div id="slide-content-4">
+                            <h2>Smoking Snakes</h2>
+                            <h3>Brazilian Mountain Infantry Battalion</h3>
+                            <p class="sub-text">On April 14 1944, three Brazillian soldiers on patrol near Montese,
+                                Italy were attacked by Nazi forces. YOU'LL NEVER BELIEVE WHAT COMES NEXT<a href="#">Read more</a></p>
+                        </div>
+
+                        <div id="slide-content-5">
+                            <h2>Inmate 4859</h2>
+                            <h3>Witold Pilecki</h3>
+                            <p class="sub-text">13 May 1901- 25 May 1947<a href="#">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/Slider-->
+
+        <div class="row hidden-xs" id="slider-thumbs">
+            <!-- Bottom switcher of slider -->
+            <ul class="hide-bullets">
+                <li class="col-sm-2">
+                    <a class="thumbnail" id="carousel-selector-0"><img src="images/murphie.jpg"></a>
+                </li>
+
+                <li class="col-sm-2">
+                    <a class="thumbnail" id="carousel-selector-1"><img src="images/witches.jpg"></a>
+                </li>
+
+                <li class="col-sm-2">
+                    <a class="thumbnail" id="carousel-selector-2"><img src="images/karel.jpg"></a>
+                </li>
+
+                <li class="col-sm-2">
+                    <a class="thumbnail" id="carousel-selector-3"><img src="images/brown.jpg"></a>
+                </li>
+
+                <li class="col-sm-2">
+                    <a class="thumbnail" id="carousel-selector-4"><img src="images/snek.png"></a>
+                </li>
+
+                <li class="col-sm-2">
+                    <a class="thumbnail" id="carousel-selector-5"><img src="images/witold.jpg"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    <h2>Dynamic Tabs</h2>
+    <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
+
+    <ul class = "selections nav nav-tabs">
+        <!--<li class="active"><a data-toggle="tab" href="#home" style>Home</a></li>-->
+        <li class = "col-md-3 vig-hole nav"><a data-toggle="tab" href="#menu1"><img class ="vig" src="images/murphie.jpg"></a></li>
+        <li class = "col-md-3 vig-hole nav"><a data-toggle="tab" href="#menu2"><img class ="vig" src="images/witches.jpg"></a></li>
+        <li class = "col-md-3 vig-hole nav"><a data-toggle="tab" href="#menu3"><img class ="vig" src="images/karel.jpg"></a></li>
+        <li class = "col-md-3 vig-hole nav"><a data-toggle="tab" href="#menu4"><img class ="vig" src="images/brown.jpg"></a></li>
+
+    </ul>
+
+
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3>HOME</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h3>Menu 1</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HYWdgBtSM8s" frameborder="0" allowfullscreen></iframe>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>Menu 2</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/C7NSUFDHFgg" frameborder="0" allowfullscreen></iframe>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+        <div id="menu3" class="tab-pane fade">
+            <h3>Menu 3</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/PbHbHEbssZ4" frameborder="0" allowfullscreen></iframe>
+            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+        <div id="menu4" class="tab-pane fade">
+            <h3>Menu 4</h3>
+            <iframe width="300" height="90" src="//media.myspace.com/play/song/no-bullets-fly-114184429-129798973" frameborder="0" allowtransparency="true" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+    </div>
+
+</body>
+</html>
